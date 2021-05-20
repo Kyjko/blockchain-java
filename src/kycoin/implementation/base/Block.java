@@ -2,16 +2,16 @@ package kycoin.implementation.base;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Block {
-    private final List<Transaction> transactions;
+    private final List<Transaction> transactions = new ArrayList<>();
     private final long index;
     private final Instant date;
     private int prev;
 
-    public Block(List<Transaction> transactions, long index) {
-        this.transactions = transactions;
+    public Block(long index) {
         this.index = index;
         this.date = Clock.systemUTC().instant();
         this.prev = 0;
@@ -41,6 +41,10 @@ public class Block {
         });
 
         return sb.toString();
+    }
+
+    public void addTransaction(Transaction tr) {
+        this.transactions.add(tr);
     }
 
     public List<Transaction> getTransactions() {

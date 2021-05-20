@@ -10,21 +10,23 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Transaction> trs = new ArrayList<>();
-        List<Transaction> trs2 = new ArrayList<>();
+        Block b1 = new Block(0);
+        Block b2 = new Block(1);
 
-        trs.add(new Transaction("Kyjko0777", "Badapple", 100.4));
-        trs.add(new Transaction("Madarr021azzo0301", "Kyjko0777", 534534));
-        trs.add(new Transaction("Uwu", "Badapple", 86.7));
+        b1.addTransaction(new Transaction("Kyjko0777", "Badapple", 100.4));
+        b1.addTransaction(new Transaction("Madarr021azzo0301", "Kyjko0777", 534534));
+        b1.addTransaction(new Transaction("Uwu", "Badapple", 86.7));
 
-        trs2.add(new Transaction("Kyjko0777", "Uwu", 10002.241));
-        trs2.add(new Transaction("Kyjko0777", "Nekem", 10020.0));
-        trs2.add(new Transaction("Kyjko0777", "adsad", 10040.0));
-        trs2.add(new Transaction("Big man", "Kyjko0777", 10050.0));
+        b2.addTransaction(new Transaction("Kyjko0777", "Uwu", 10002.241));
+        b2.addTransaction(new Transaction("Kyjko0777", "Nekem", 10020.0));
+        b2.addTransaction(new Transaction("Kyjko0777", "adsad", 10040.0));
+        b2.addTransaction(new Transaction("Big man", "Kyjko0777", 10050.0));
 
         Blockchain bc = new Blockchain();
-        bc.addBlock(new Block(trs, 0));
-        bc.addBlock(new Block(trs2, 1));
+
+        bc.addBlock(b1);
+        bc.addBlock(b2);
+
         System.out.println(bc);
     }
 }
