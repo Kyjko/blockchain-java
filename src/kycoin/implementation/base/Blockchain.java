@@ -1,12 +1,12 @@
 package kycoin.implementation.base;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Blockchain {
-    private final List<Block> chain;
+    private final List<Block> chain = new ArrayList<>();
 
-    public Blockchain(List<Block> chain) {
-        this.chain = chain;
+    public Blockchain() {
     }
 
     public Block getLastBlock() {
@@ -19,7 +19,8 @@ public class Blockchain {
     }
 
     public void addBlock(Block b) {
-        if(getChain().size() > 0) {
+        var chain = getChain();
+        if(chain.size() > 0) {
             b.setPrev(getLastBlock().hashCode());
         }
         this.chain.add(b);
