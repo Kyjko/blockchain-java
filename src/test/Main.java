@@ -17,10 +17,14 @@ public class Main {
         b1.addTransaction(new Transaction("Madarr021azzo0301", "Kyjko0777", 534534));
         b1.addTransaction(new Transaction("Uwu", "Badapple", 86.7));
 
+        //System.out.println(b1.hashCode());
+
         b2.addTransaction(new Transaction("Kyjko0777", "Uwu", 10002.241));
         b2.addTransaction(new Transaction("Kyjko0777", "Nekem", 10020.0));
         b2.addTransaction(new Transaction("Kyjko0777", "adsad", 10040.0));
         b2.addTransaction(new Transaction("Big man", "Kyjko0777", 10050.0));
+
+        //System.out.println(b2.hashCode());
 
         Blockchain bc = new Blockchain();
 

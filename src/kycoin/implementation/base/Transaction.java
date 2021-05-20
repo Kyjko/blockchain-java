@@ -29,8 +29,7 @@ public class Transaction {
                 " " +
                 getAmount() +
                 " " +
-                getDate() +
-                "\n";
+                getDate();
     }
 
     public String getSender() {

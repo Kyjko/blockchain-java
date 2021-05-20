@@ -25,6 +25,8 @@ public class Block {
     public int hashCode() {
         StringBuilder sb = new StringBuilder();
         sb.append(getIndex());
+        sb.append(getDate());
+        sb.append(getPrev());
         getTransactions().forEach(t -> sb.append(t.hashCode()));
 
         return sb.hashCode();
@@ -33,13 +35,14 @@ public class Block {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getIndex());
-        sb.append("\n");
+        sb.append("\n---- Block (idx = ")
+                .append(getIndex()).append(") ----\n");
+
         getTransactions().forEach(t -> {
             sb.append(t.toString());
-            sb.append("\n----------\n");
+            sb.append("\n");
         });
-
+        sb.append("----------------------");
         return sb.toString();
     }
 

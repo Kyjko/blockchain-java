@@ -29,11 +29,11 @@ public class Blockchain {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("====== Blockchain ======");
         getChain().forEach(b -> {
             sb.append(b.toString());
-            sb.append("\n==========\n");
         });
-
+        sb.append("\n================\n");
         return sb.toString();
     }
 
